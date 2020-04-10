@@ -101,7 +101,7 @@ is.data.frame(iris)
 is.matrix(state.x77)
 is.data.frame(state.x77)
 
-# 자료구조 변환
+# 자료구조 변환(#3-17, #matter)
 # 매트릭스 -> 데이터 프레임 변환
 state.x77
 st<-data.frame(state.x77)
@@ -110,7 +110,7 @@ class(st)
 
 # 데이터 프레임 -> 매트릭스 as.matrix()
 # 문자형 열은 제외하고 숫자형 열로 된 부분만 따로 데이터프레임 iris.m으로 변환 작업
-# 매트릭스로 형변환시 매트릭스에 저장된ㄴ 모든 값들이 자료형이 동일해야 한다
+# 매트릭스로 형변환시 매트릭스에 저장된 모든 값들이 자료형이 동일해야 한다
 iris
 iris.m <- as.matrix(iris[, 1:4])
 head(iris.m)
