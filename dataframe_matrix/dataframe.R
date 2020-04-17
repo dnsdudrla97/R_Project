@@ -68,6 +68,7 @@ t(z) # 전치
 # 조건에 맞는 행과 열의 값 출력
 # 특정한 조건에 따른 값들을 추출 -> subset()
 # subset() 데이터 프레임에서 만 적용 (매트릭스에 적용시 타입 변환후 가능)
+
 IR.1 <- subset(iris, Species=="setosa")
 IR.1
 IR.2 <- subset(iris, Sepal.Length > 5.0 & Sepal.Width > 4.0)

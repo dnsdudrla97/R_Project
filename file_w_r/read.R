@@ -5,3 +5,4 @@ read_test<-read.csv(file.choose(), header=T)         # 파일의 경로를 모�
 head(read_test)
 str(read_test)
 
+
