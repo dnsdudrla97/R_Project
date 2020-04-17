@@ -64,3 +64,18 @@ colMeans(subset(st[3], Illiteracy >= 2.0))
 colMeans(subset(st[3], Illiteracy < 2.0)) - colMeans(subset(st[3], Illiteracy >= 2.0))
 #02-20
 max(st$Life.Exp)
+#02-21
+rownames(subset(st, Income > st['Pennsylvania','Income']))
+
+
+#03
+class(mtcars)
+
+#03-2
+dim(mtcars)
+
+#03-3
+str(mtcars)
+
+#03-5
+rownames(subset(mtcars, mpg == max(mtcars$mpg)))
