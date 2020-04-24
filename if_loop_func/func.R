@@ -27,16 +27,23 @@ myfunc<-function(x, y) {
     val.mul<-x*y
     return(list(sum=val.sum, mul=val.mul))
 }
-
 result<-myfunc(5, 8)
 s<-result$sum
 m<-result$mul
 cat('5+8=', s, '\n')
 cat('5*8=', m, '\n')
 
-
+myfunc2<-function(x, y) {
+    tmp.sum<-x+y;
+    tmp.mul<-x*y;
+    return(list(sum=tmp.sum, mul=tmp.mul))
+}
+result<-myfunc2(10, 20)
+class(result)
+result
+result$sum
 
 setwd("C:/Users/Younsle/Desktop/R/if_loop_func/myfunc")
-source("myfunc.R")
+source("myfunc.R")      # 해당 파일안에 저장되어 있는 함수나 명령문을 실행
 
 maxVar(mymax(10, 20), 20, 30)

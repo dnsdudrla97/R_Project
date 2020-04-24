@@ -79,3 +79,40 @@ str(mtcars)
 
 #03-5
 rownames(subset(mtcars, mpg == max(mtcars$mpg)))
+#03-6
+rownames(subset(mtcars, gear == 4 & mpg == min(mtcars$mpg)))
+mtcars[c("Cadillac Fleetwood", "Lincoln Continental"),"mpg"]
+rownames(subset(mtcars, gear==4))
+
+#03-7
+mtcars["Honda Civic", c("mpg", "gear")]
+
+#03-8
+mtcars["Pontiac Firebird", "mpg"]
+rownames(subset(mtcars, mpg > mtcars["Pontiac Firebird", "mpg"]))
+
+#03-9
+mean(mtcars$mpg)
+colMeans(mtcars[1])
+
+#03-10
+mtcars[10]
+
+#04
+str(airquality)
+#04-1
+class(airquality)
+#04-2
+head(airquality, 10)
+#04-3
+airquality[rownames(subset(airquality, Temp == max(airquality$Temp))), c("Month", "Day")]
+
+#04-4
+max.wind<-max(airquality["Wind"])
+
+subset(airquality, Month == 6 & Wind == max.wind)
+
+airquality[,-c(1, 2, 4, 6)]
+subset(airquality[,-c(1, 2, 4, 6)], Month == 6)
+
+subset(airquality, select=c("Wind", "Month"), Month == 6 & Wind == max(Wind))
