@@ -128,9 +128,9 @@ summary(swiss)
 head(swiss, 10)
 rownames(subset(swiss, Agriculture == max(swiss$Agriculture)))
 #05-3
-subset(swiss, sort(swiss$Agriculture, T))['Agriculture']
-sort(swiss['Agriculture'], T)
-sort(as.matrix(swiss['Agriculture'], T))
+
+swiss.new<-swiss[order(swiss$Agriculture, decreasing = T),]
+swiss.new['Agriculture']
 
 
 #05-4

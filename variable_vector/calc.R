@@ -83,27 +83,30 @@ vc.3
 #09
 #9-1
 d<-c(seq(100, 200))
-d
+print(d)
 #9-2
-d[10]
+print(d[10])
 
 #9-3
 d<-seq(d[101],d[91],-1)
 d
-
+print(d[seq(1, length(d)-10, 1)])
 #9-4
 condi<-d%%2
-d[condi == 1]
+print(d[d%%2 == 1])
+print(d[seq(2, length(d), 2)])
 
 #9-5
-d[d%%3==0]
+print(d[d%%3==0])
+print(d[seq(3, length(d), 3)])
 
 #9-6
 d.20<-d[1:20]
-d.20
+print(d.20)
 
 #9-7
 d.20[-5]
+
 #9-8
 d.20[-c(5, 7, 9)]
 
