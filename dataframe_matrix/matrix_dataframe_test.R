@@ -23,7 +23,7 @@ score[3, 2]
 #02
 st <- data.frame(state.x77)
 #02-2
-st
+print(st)
 #02-3
 colnames(st)
 #02-4
@@ -43,7 +43,7 @@ colMeans(st)
 #02-9
 st['Florida',]
 #02-10
-st[, 'Income']
+st['Income']
 #02-11
 st['Texas', 'Area']
 #02-12
