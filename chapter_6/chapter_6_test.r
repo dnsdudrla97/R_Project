@@ -135,3 +135,72 @@ for(i in 1:(ncol(myds)-2)) {
         plot(x=myds[,i], y=myds[,j], main=paste(colnames(myds)[i], "and", colnames(myds)[j], sep=" "), col=colors[pts])
     }
 }
+
+#13
+#13-1
+library(mlbench)
+data("Ionosphere")
+myds<-Ionosphere[,3:12]
+
+#13-2
+cors<-c()
+k<-1
+for(i in 1:(ncol(myds)-1)) {
+    for(j in i+1:(ncol(myds)-i)){
+        cors[3*k-2]<-i
+        cors[3*k-1]<-j
+        cors[3*k]<-cor(myds[,i], myds[,j])
+        k<-k+1
+    }
+}
+
+length(cors)
+idx<-1:length(cors)
+idx.max<-which.max(abs(cors[idx%%3==0]))
+cat("most relative properties are", colnames(myds)[cors[idx.max*3-2]], "and", colnames(myds)[cors[idx.max*3-1]], "\nand value of cor :", cors[idx.max*3], "\n")
+
+#14
+year<-1875:1972
+hlevel<-as.vector(LakeHuron)
+plot(x=year, y=hlevel, type='l', col='blue')
+
+#15
+colnames(AirPassengers)
+extMonthPsg<-function(y) {
+    return (AirPassengers[((y-1949)*12+1):((y-1949)*12+12)])
+}
+year1949<-extMonthPsg(1949)
+year1955<-extMonthPsg(1955)
+year1960<-extMonthPsg(1960)
+months<-1:12
+plot(year1949 ~ months,
+    ylim = (c(min(c(min(year1949), min(year1955), min(year1960))),
+        max(c(max(year1949), max(year1955), max(year1960))))),
+    col = "red",
+    main = "red:1949, blue:1955, green:1960",
+    type = "l",
+    ylab = "passengers"
+)
+lines(year1955~months, col="blue", type='l')
+lines(year1960~months, col="green", type='l')
+
+#16
+colnames(USAccDeaths)
+extMonthUs<-function(y) {
+    return (USAccDeaths[((y-1973)*12+1):((y-1973)*12+12)])
+}
+year1973<-extMonthUs(1973)
+year1975<-extMonthUs(1975)
+year1977<-extMonthUs(1977)
+months<-1:12
+plot(year1973 ~ months,
+    ylim = (c(min(c(min(year1973), min(year1975), min(year1977))),
+        max(c(max(year1973), max(year1975), max(year1977))))),
+    col = "red",
+    main = "red:1973, blue:1975, green:1977",
+    type = "l",
+    ylab = "passengers"
+)
+lines(year1975~months, col="blue", type='l')
+lines(year1977~months, col="green", type='l')
+
